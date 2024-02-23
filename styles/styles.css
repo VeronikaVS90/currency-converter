@@ -7,7 +7,8 @@ body {
   overflow-x: hidden;
 }
 
-input, button {
+input,
+button {
   background: none;
   outline: none;
   border: none;
@@ -20,4 +21,113 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 1024px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 28px;
+}
+
+h1 {
+  width: 100%;
+  text-align: center;
+  font-size: 22px;
+  color: #fff;
+  margin: 0;
+  line-height: 27px;
+  font-weight: 700;
+}
+
+.main {
+  width: 100%;
+  position: relative;
+}
+.main:after, .main:before {
+  position: absolute;
+  content: "";
+  display: block;
+}
+.main:before {
+  width: 220px;
+  height: 220px;
+  bottom: 0;
+  left: -180px;
+  background: url(../images/bitcoin.png) no-repeat center/contain;
+  z-index: -1;
+}
+.main:after {
+  width: 144px;
+  height: 144px;
+  top: -72px;
+  right: 0;
+  background: url(../images/ethereum.png) no-repeat center/contain;
+  z-index: 1;
+}
+
+.wrapper {
+  background: linear-gradient(180deg, #271d35 0%, rgba(39, 29, 53, 0.2) 100%);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  border-radius: 12px;
+  padding: 9px 45px 37px 45px;
+  width: 100%;
+  min-height: 314px;
+}
+
+.tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.tabs:before {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  width: 70%;
+  height: 2px;
+  min-width: 660px;
+  background: linear-gradient(90deg, rgba(217, 217, 217, 0) 12.5%, #ffffff 51.57%, rgba(255, 255, 255, 0) 86.98%);
+  opacity: 0.2;
+  content: "";
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  padding: 10px 15px;
+  opacity: 0.5;
+  transition: opacity 0.25 ease;
+  position: relative;
+}
+.tab:after {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  width: 0;
+  height: 2px;
+  content: "";
+  transition: width 0.25 ease;
+  background: linear-gradient(90deg, rgba(255, 88, 95, 0) 0%, #fa5897 51.57%, rgba(255, 88, 95, 0) 100%);
 }/*# sourceMappingURL=styles.css.map */
