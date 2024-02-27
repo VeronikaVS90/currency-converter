@@ -339,3 +339,81 @@ h1 {
         color: #fff;
     }
 }
+
+.select {
+    cursor: pointer;
+    min-width: 240px;
+    @include input;
+}
+
+.currency {
+    &-wrapper {
+        margin-top: 40px;
+    }
+
+    &-item {
+        display: grid;
+        align-items: center;
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 100%;
+        border-radius: 12px;
+        padding: 14px 20px;
+        border: 2px solid #fa5897;
+        background: none;
+    }
+
+    &-titles {
+        @include flex(start);
+        column-gap: 19px;
+    }
+
+    &-title {
+        font-weight: 600;
+        line-height: 19px;
+        color: #f5f5f5;
+        min-width: 40px;
+
+    }
+
+         &-full {
+             font-weight: 400;
+             font-size: 12px;
+             line-height: 15px;
+             color: rgba(245, 245, 245, 0.5);
+         }
+
+         &-amount {
+            text-align: center;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 22px;
+         }
+
+         &-single {
+            position: relative;
+
+            .currency-item {
+                height: 69px;
+            }
+
+            .select {
+                display: none;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                right: 10px;
+                width: calc(100% - 20px);
+                max-width: 290px;
+            }
+
+            &.active {
+                .currency-button {
+                    display: none;
+                }
+
+                .select {
+                    display: block;
+                }
+            }
+         }
+}
