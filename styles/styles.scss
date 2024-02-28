@@ -416,4 +416,70 @@ h1 {
                 }
             }
          }
+
+         &-action {
+            text-align: right;
+         }
+
+        &-current {
+            border: none;
+            background: #879fff;
+
+            .currency {
+                &-full {
+                    color: #2b2440;
+                }
+            }
+        } 
+
+        &-list {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            row-gap: 8px;
+        }
+
+        &-button {
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 15px;
+            color: rgba(255, 255, 255, 0.5);
+            width: max-content;
+            padding: 10px 24px;
+            cursor: pointer;
+            transition: border 0.25s, color 0.25s;
+            text-transform: capitalize;
+
+            &:hover {
+                border: 1px solid rgba(255, 255, 255, 1);
+                color: rgba(255, 255, 255, 1);
+            }
+        }
+
+        &-add {
+            display: flex;
+            justify-content: end;
+            margin-top: 20px;
+
+            &__button {
+                @include button;
+            }
+
+            .select {
+                display: none;
+                padding: 11px 14px;
+            }
+
+            &.active {
+                .select {
+                    display: block;
+                }
+
+                .currency-add__button {
+                    display: none;
+                }
+            }
+        }
 }
