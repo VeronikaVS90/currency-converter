@@ -42,6 +42,12 @@ input[type=number] {
   flex-direction: column;
   row-gap: 28px;
 }
+@media screen and (max-width: 1100px) {
+  .container {
+    width: 100vw;
+    padding: 0 5px;
+  }
+}
 
 h1 {
   width: 100%;
@@ -52,6 +58,12 @@ h1 {
   line-height: 27px;
   font-weight: 700;
 }
+@media screen and (max-width: 1100px) {
+  h1 {
+    font-size: 17px;
+    line-height: 24px;
+  }
+}
 
 .main {
   width: 100%;
@@ -61,6 +73,11 @@ h1 {
   position: absolute;
   content: "";
   display: block;
+}
+@media screen and (max-width: 1100px) {
+  .main:after, .main:before {
+    display: none;
+  }
 }
 .main:before {
   width: 220px;
@@ -86,7 +103,16 @@ h1 {
   border-radius: 12px;
   padding: 9px 45px 37px 45px;
   width: 100%;
-  min-height: 314px;
+}
+@media screen and (max-width: 1100px) {
+  .wrapper {
+    padding: 9px 20px 15px 20px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .wrapper {
+    padding: 10px;
+  }
 }
 
 .tabs {
@@ -106,6 +132,12 @@ h1 {
   background: linear-gradient(90deg, rgba(217, 217, 217, 0) 12.5%, #ffffff 51.57%, rgba(255, 255, 255, 0) 86.98%);
   opacity: 0.2;
   content: "";
+}
+@media screen and (max-width: 1100px) {
+  .tabs:before {
+    min-width: unset;
+    width: 100%;
+  }
 }
 
 .tab {
@@ -163,8 +195,19 @@ h1 {
   justify-content: center;
   gap: 25px;
 }
+@media screen and (max-width: 1100px) {
+  .form-inputs {
+    min-width: unset;
+    flex-direction: column;
+  }
+}
 .form-group {
   width: 320px;
+}
+@media screen and (max-width: 700px) {
+  .form-group {
+    width: 100%;
+  }
 }
 .form-group input {
   width: 100%;
@@ -183,6 +226,19 @@ h1 {
   -moz-column-gap: 25px;
        column-gap: 25px;
   align-items: flex-end;
+}
+@media screen and (max-width: 700px) {
+  .form-selects {
+    width: 100%;
+    -moz-column-gap: 10px;
+         column-gap: 10px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .form-selects {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 .form-select {
   flex-grow: 1;
