@@ -73,7 +73,7 @@ margin-left: auto;
 
     @media screen and (max-width: 1100px) {
         width: 100vw;
-        padding: 0 5px;
+        padding: 5px;
     }
 }
 
@@ -438,6 +438,11 @@ h1 {
     cursor: pointer;
     min-width: 240px;
     @include input;
+
+    @media screen and (max-width: 700px) {
+            min-width: unset;
+            width: 100%;
+        }
 }
 
 .currency {
@@ -454,11 +459,22 @@ h1 {
         padding: 14px 20px;
         border: 2px solid #fa5897;
         background: none;
+
+        @media screen and (max-width: 500px) {
+                padding: 10px;
+                align-content: center;
+            }
     }
 
     &-titles {
         @include flex(start);
         column-gap: 19px;
+
+        @media screen and (max-width: 500px) {
+                flex-direction: column;
+                gap: 5px;
+                align-items: start;
+            }
     }
 
     &-title {

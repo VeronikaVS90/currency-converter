@@ -45,7 +45,7 @@ input[type=number] {
 @media screen and (max-width: 1100px) {
   .container {
     width: 100vw;
-    padding: 0 5px;
+    padding: 5px;
   }
 }
 
@@ -440,6 +440,12 @@ h1 {
   border: 2px solid rgba(255, 88, 95, 0.35);
   padding: 14px;
 }
+@media screen and (max-width: 700px) {
+  .select {
+    min-width: unset;
+    width: 100%;
+  }
+}
 
 .currency-wrapper {
   margin-top: 40px;
@@ -454,12 +460,25 @@ h1 {
   border: 2px solid #fa5897;
   background: none;
 }
+@media screen and (max-width: 500px) {
+  .currency-item {
+    padding: 10px;
+    align-content: center;
+  }
+}
 .currency-titles {
   display: flex;
   align-items: center;
   justify-content: start;
   -moz-column-gap: 19px;
        column-gap: 19px;
+}
+@media screen and (max-width: 500px) {
+  .currency-titles {
+    flex-direction: column;
+    gap: 5px;
+    align-items: start;
+  }
 }
 .currency-title {
   font-weight: 600;
