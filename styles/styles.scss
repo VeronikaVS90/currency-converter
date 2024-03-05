@@ -31,11 +31,11 @@ input[type=number] {
     box-sizing: border-box;
 }
 
-@mixin flex($justify: center) {
-    display: flex;
-    align-items: center;
-    justify-content: $justify;
-}
+// @mixin flex($justify: center) {
+//     display: flex;
+//     align-items: center;
+//     justify-content: $justify;
+// }
 
 @mixin input {
     background: #2b2440;
