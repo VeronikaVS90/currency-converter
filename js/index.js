@@ -3,7 +3,7 @@ import state from "./state.js";
 
 import { handleChange } from "./convert.js";
 
-const { selects, success } = variables;
+const { selects, success, tabs } = variables;
 
 const renderCodeList = () => {
     selects.forEach((select) => {
@@ -30,9 +30,23 @@ export const fetchCodes = async () => {
     } catch (err) {
         console.log(err);
     }
-
 };
 
-fetchCodes();
+export const handleTabClick = ({ currentTarget: target }) => {
+    const { tab } = target.dataset;
+    const children = document.querySelectorAll(".content");
+
+    if (!tab || tab === state.currentTab) return;
+
+    tabs.forEach((item) => item.classList.remove("active"))
+    target.classList.add("active")
+
+    for (const child of children) {
+        if (child.dataset.child === tab) child.classList.add("show");
+        else child.classList.remove("show");
+    }
+
+    state.currentTab = tab;
+};
 
 

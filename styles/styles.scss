@@ -593,3 +593,11 @@ h1 {
             }
         }
 }
+
+.content {
+    display: none;
+
+    &.show {
+        display: block;
+    }
+}
