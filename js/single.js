@@ -1,6 +1,12 @@
+import state from "./state.js";
 import variables from "./variables.js";
 
-const {success}  = variables
+const { success, currentCurrency } = variables;
+
+const insertCurrencies = () => {
+    const { currency } = state;
+    const { conversion_rates: rates, base_code: baseCode } = currency;
+}
 export const fetchLatest = async () => {
     const { url, currency: { code } } = state;
 
