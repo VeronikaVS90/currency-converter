@@ -10,5 +10,6 @@ export default {
     currentTab: "convert",
     currency: {
         code: "USD"
-    }
+    },
+    currencies: ['USD', 'EUR', 'BYN']
 };
