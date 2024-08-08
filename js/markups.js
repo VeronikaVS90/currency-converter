@@ -16,8 +16,13 @@ export const renderResult = ({ code, amount, full }) => {
           <div class="form-result__item-value">${amount.toFixed(2)}</div>`;
 };
 
+const getCurrencyItemAction = (isBase) => {
+  const { actions: { remove, change } } = state;
+}
+
 export const renderCurrencyItem = ({ code, base_code: baseCode, rate = 1 }) => {
   const isBase = code === baseCode;
+  const action =
   const full = getFullTitle(state.codes, code);
   return `<div class="currency-item ${isBase ? "currency-current" : ""}">
                             <div class="currency-titles">

@@ -11,5 +11,9 @@ export default {
     currency: {
         code: "USD"
     },
-    currencies: ['USD', 'EUR', 'BYN']
+    currencies: ['USD', 'EUR', 'BYN'],
+    actions: {
+        remove: 'remove',
+        change: 'change'
+    }
 };
