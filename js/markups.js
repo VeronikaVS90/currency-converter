@@ -18,11 +18,15 @@ export const renderResult = ({ code, amount, full }) => {
 
 const getCurrencyItemAction = (isBase) => {
   const { actions: { remove, change } } = state;
+  const actionName = isBase ? change : remove
+  return `   <button class="currency-${actionName} data-action="${actionName}" currency-button">
+                                 ${actionName}
+                              </button>`
 }
 
 export const renderCurrencyItem = ({ code, base_code: baseCode, rate = 1 }) => {
   const isBase = code === baseCode;
-  const action =
+  const action = getCurrencyItemAction(isBase);
   const full = getFullTitle(state.codes, code);
   return `<div class="currency-item ${isBase ? "currency-current" : ""}">
                             <div class="currency-titles">
@@ -31,9 +35,7 @@ export const renderCurrencyItem = ({ code, base_code: baseCode, rate = 1 }) => {
                             </div>
                             <div class="currency-amount">${rate.toFixed(2)}</div>
                             <div class="currency-action">
-                              <button class="currency-change currency-button">
-                                 Change
-                              </button>
+                             ${action}
                             </div>
                           </div>`
 }
