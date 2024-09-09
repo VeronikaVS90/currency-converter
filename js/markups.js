@@ -19,10 +19,10 @@ export const renderResult = ({ code, amount, full }) => {
 const getCurrencyItemAction = (isBase) => {
   const { actions: { remove, change } } = state;
   const actionName = isBase ? change : remove
-  return `   <button class="currency-${actionName} data-action="${actionName}" currency-button">
+  return `   <button data-action="${actionName}" currency-button">
                                  ${actionName}
                               </button>`
-}
+};
 
 export const renderCurrencyItem = ({ code, base_code: baseCode, rate = 1 }) => {
   const isBase = code === baseCode;
