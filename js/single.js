@@ -36,4 +36,24 @@ export const fetchLatest = async () => {
     } catch (err) {
         console.log(err);
     }
+};
+
+const removeCurrency = (target) => {
+    const parent = target.parentElement.parentElement;
+    const { item } = parent.dataset;
+
+    if (!item) return;
+
+    const element = document.querySelector(`[data-item="${item}"]`);
+    element.remove();
 }
+
+export const handleActionClick = ({ target }) => {
+    const { action } = target.dataset;
+
+    if (!action) return;
+
+    const { actions: { remove } } = state;
+
+    action === remove ? removeCurrency(target) : () => {}
+ };
