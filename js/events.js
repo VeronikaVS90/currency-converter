@@ -1,8 +1,9 @@
 import { handleInput, handleSubmit, switchCurrencies } from "./convert.js";
 import { fetchCodes } from "./index.js";
+import { addCurrency, handleActionClick, handleAddSelectChange, handleSingleSelectChange } from "./single.js";
 import variables from "./variables";
 
-const { amountInput, form, switchButton, tabs, currentCurrency, currentCurrencyList } = variables;
+const { amountInput, form, switchButton, tabs, currentCurrency, currentCurrencyList, singleSelect, addButton } = variables;
 
 fetchCodes();
 amountInput.addEventListener('keyup', handleInput);
@@ -11,3 +12,6 @@ switchButton.addEventListener("click", switchCurrencies);
 tabs.forEach((tab) => tab.addEventListener("click", handleTabClick));
 currentCurrency.addEventListener('click', handleActionClick);
 currentCurrencyList.addEventListener('click', handleActionClick);
+singleSelect.addEventListener("change", handleSingleSelectChange);
+addButton.addEventListener("click", addCurrency);
+addCurrencySelect.addEventListener("change", handleAddSelectChange)
