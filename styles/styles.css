@@ -7,6 +7,16 @@ body {
   overflow-x: hidden;
 }
 
+input,
+button {
+  background: none;
+  outline: none;
+  border: none;
+  font-family: Inter, Roboto, sans-serif;
+  font-size: 16px;
+  color: #fff;
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -137,9 +147,9 @@ h1 {
   cursor: pointer;
   -moz-column-gap: 10px;
        column-gap: 10px;
-  padding: 10px 15px;
+  padding: 15px 10px;
   opacity: 0.5;
-  transition: opacity 0.25 ease;
+  transition: opacity 0.25s ease;
   position: relative;
 }
 .tab:after {
@@ -150,7 +160,7 @@ h1 {
   width: 0;
   height: 2px;
   content: "";
-  transition: width 0.25 ease;
+  transition: width 0.25s ease;
   background: linear-gradient(90deg, rgba(255, 88, 95, 0) 0%, #fa5897 51.57%, rgba(255, 88, 95, 0) 100%);
 }
 .tab-icon {
